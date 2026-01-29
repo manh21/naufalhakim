@@ -1,0 +1,232 @@
+---
+import Navigation from "../components/Navigation.astro";
+import Layout from "../layouts/Layout.astro";
+import Typewriter from "astro-typewriter";
+import { Image } from "astro:assets";
+
+import profileImage from "../assets/me.png";
+import githubImage from "../assets/github.svg";
+import linkedinImage from "../assets/linkedin.png";
+import whatsappImage from "../assets/whatsapp.svg";
+import instagramImage from "../assets/instagram.svg";
+import tiktokImage from "../assets/tiktok.png";
+import wavingHandImage from "../assets/waving-hand.png";
+---
+
+<Layout>
+  <Navigation />
+
+  <!-- Hero Section -->
+  <div class="space-y-4 pb-[160px] relative">
+    <div
+      class="relative flex items-center justify-center text-center z-10 pt-24"
+    >
+      <div class="element__wrapper flex flex-col sm:flex-row">
+        <!-- Left Box -->
+        <div class="flex-1 justify-center mr-auto">
+          <div class="flex flex-col gap-4 max-w-lg sm:mt-[128px]">
+            <h1
+              class="text-primary text-2xl font-bold text-center sm:text-left"
+            >
+              Naufal Hakim
+            </h1>
+            <p class="text-primary text-md text-justify">
+              a full-stack developer with expertise in modern web technologies.
+              I have 2 years of experience delivering scalable and robust
+              websites and web applications using Agile and Scrum methodologies.
+              I excel in implementing database architecture and managing
+              server-side logic.
+            </p>
+          </div>
+        </div>
+
+        <!-- Middle Box -->
+        <div class="flex-1 justify-center relative">
+          <!-- Animation -->
+          <div
+            class="absolute w-[50vw] left-[50%] transform sm:translate-y-20 sm:translate-x-[10%] scale-[0.6] sm:scale-80"
+          >
+            <div class="flex flex-col sm:flex-row gap-0 sm:gap-4 items-center">
+              <Typewriter
+                messages={[
+                  "Selamat Datang",
+                  "Bonjur",
+                  "Good Morning",
+                  "おはようございます",
+                  "안녕하세요",
+                  "Buenos Días",
+                ]}
+                waitWritten={2000}
+                class="text-4xl font-bold"
+              />
+              <Image
+                src={wavingHandImage}
+                priority
+                alt="Waving Hand"
+                class="waving-hand w-full max-w-[128px] scale-[0.6] sm:scale-100"
+              />
+            </div>
+          </div>
+
+          <!-- Profile Image -->
+          <div class="flex flex-col w-full sm:max-w-lg items-center mt-8">
+            <Image
+              src={profileImage}
+              priority
+              alt="Naufal Hakim"
+              class="w-full"
+            />
+          </div>
+
+          <!-- Sosmed Box -->
+          <div
+            class="absolute w-full sm:w-[40vw] left-[50%] transform -translate-x-[50%] bottom-0"
+          >
+            <ul
+              class="background-hero-button grid grid-cols-2 gap-4 sm:flex sm:flex-row sm:items-center sm:justify-center text-center relative w-full"
+            >
+              <li class="background-hero-button__item">
+                <a
+                  href="https://www.instagram.com/manh_21/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex-1 flex flex-col justify-between" 
+                >
+                  <Image
+                    priority
+                    src={instagramImage}
+                    alt="Instagram"
+                    width={48}
+                    height={48}
+                    class="object-contain h-[48px] w-[48px] mx-auto"
+                  />
+                  <h2>Instagram</h2>
+                </a>
+              </li>
+              <li class="background-hero-button__item">
+                <a
+                  href="https://www.tiktok.com/@nopal.h"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex-1 flex flex-col justify-between"
+                >
+                  <Image
+                    src={tiktokImage}
+                    priority
+                    alt="TikTok"
+                    width={48}
+                    height={48}
+                    class="object-contain h-[48px] w-[48px] mx-auto"
+                  />
+                  <h2>TikTok</h2>
+                </a>
+              </li>
+              <li class="background-hero-button__item">
+                <a
+                  href="https://github.com/manh21"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex-1 flex flex-col justify-between"
+                >
+                  <Image
+                    src={githubImage}
+                    priority
+                    alt="GitHub"
+                    width={48}
+                    height={48}
+                    class="object-contain h-[48px] w-[48px] mx-auto"
+                  />
+                  <h2>Github</h2>
+                </a>
+              </li>
+              <li class="background-hero-button__item">
+                <a
+                  href="https://www.linkedin.com/in/muh-aqila-naufal-hakim/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex-1 h-full flex flex-col justify-between"
+                >
+                  <Image
+                    src={linkedinImage}
+                    priority
+                    alt="LinkedIn"
+                    width={48}
+                    height={48}
+                    class="object-contain h-[48px] w-[48px] mx-auto"
+                  />
+                  <h2 class="items-end">LinkedIn</h2>
+                </a>
+              </li>
+              <li class="background-hero-button__item">
+                <a
+                  href="https://wa.me/+6285735164799"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex-1 flex flex-col justify-between"
+                >
+                  <Image
+                    priority
+                    src={whatsappImage}
+                    alt="WhatsApp"
+                    width={48}
+                    height={48}
+                    class="object-contain h-[48px] w-[48px] mx-auto"
+                  />
+                  <h2>WhatsApp</h2>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Right Box -->
+        <div class="flex-1 justify-center ml-auto"></div>
+      </div>
+    </div>
+
+    <!-- Background -->
+    <div class="absolute inset-0 z-0">
+      <div class="background-hero relative h-full overflow-hidden">
+        <div class="h-[200px]"></div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .background-hero {
+    background-image: linear-gradient(180deg, #b9deff, #b9deff00);
+  }
+
+  .background-hero-button {
+    position: absolute;
+    /* display: flex; */
+    /* align-items: center; */
+    /* flex-direction: row; */
+    /* justify-content: center; */
+    /* margin-top: 20px; */
+    margin-top: -20px;
+    padding: 18px 20px;
+    -webkit-backdrop-filter: blur(32px);
+    backdrop-filter: blur(32px);
+    background-color: #fff9;
+    border-radius: 16px;
+    box-shadow:
+      0 0 0 1px #1972f50f,
+      0 1px 1px #1972f50a,
+      0 3px 3px #1972f508,
+      0 6px 4px #1972f505,
+      0 11px 4px #1972f503,
+      0 32px 24px -12px #1972f50f,
+      0 0 0 1px #2c405e0f;
+  }
+
+  .background-hero-button__item {
+    flex: 1;
+	height: 100%;
+    /* margin-right: 20px; */
+    justify-content: space-between;
+    padding-bottom: 2px;
+    padding-top: 6px;
+  }
+</style>

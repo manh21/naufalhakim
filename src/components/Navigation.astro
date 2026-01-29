@@ -1,0 +1,63 @@
+<nav
+  id="navigation"
+  class="mx-auto w-full flex justify-center items-center py-8 navigation__embeded z-20"
+>
+  <div class="fixed top-0 left-0 w-full flex justify-center z-100">
+    <div
+      class="h-[68px] relative flex items-center justify-center z-20 element__wrapper"
+    >
+      <div class="px-6">
+        <ul class="flex flex-row">
+          <li
+            class="text-primary text-lg hover:cursor-pointer hover:bg-[#7d89b01f] p-3 rounded-xl"
+          >
+            <a href="#about">About</a>
+          </li>
+          <li
+            class="text-primary text-lg hover:cursor-pointer hover:bg-[#7d89b01f] p-3 rounded-xl"
+          >
+            <a href="/blogs">Blogs</a>
+          </li>
+          <li
+            class="text-primary text-lg hover:cursor-pointer hover:bg-[#7d89b01f] p-3 rounded-xl"
+          >
+            <a href="#projects">Projects</a>
+          </li>
+          <li
+            class="text-primary text-lg hover:cursor-pointer hover:bg-[#7d89b01f] p-3 rounded-xl"
+          >
+            <a href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<style>
+  .navigation__embeded {
+    position: fixed;
+    transition: color 0.3s ease;
+  }
+
+  .navigation--floating {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition:
+      background 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+</style>
+
+<script>
+  const navbar = document.querySelector("#navigation");
+  window.addEventListener("scroll", () => {
+    console.log(window.scrollY);
+    if (window.scrollY > 50) {
+      navbar?.classList.add("navigation--floating");
+    } else {
+      navbar?.classList.remove("navigation--floating");
+    }
+  }, true);
+</script>
