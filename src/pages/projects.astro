@@ -1,0 +1,26 @@
+---
+import Navigation from "../components/Navigation.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <Navigation />
+
+  <div id="pdf-viewer" style="height: 100vh"></div>
+</Layout>
+
+<script>
+  import EmbedPDF from "@embedpdf/snippet";
+
+  const container = document.getElementById("pdf-viewer");
+
+  if (container) {
+    EmbedPDF.init({
+      type: "container",
+      target: container,
+      src: "/portofolio.pdf",
+      theme: { preference: "light" },
+      disabledCategories: ["annotation", "redaction", "zoom", "panel"],
+    });
+  }
+</script>
